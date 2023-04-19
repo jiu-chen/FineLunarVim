@@ -36,11 +36,11 @@ M.config = function()
 
 	lvim.builtin.which_key.mappings["a"] = {
 		name = "Application",
-		o = { "<CMD>SymbolsOutline<CR>", "Outline" },
-		t = { "<CMD>TodoTrouble<CR>", "TODO" },
-		u = { "<CMD>UndotreeToggle<CR>", "UndoTree" },
-		m = { "<cmd>MarkdownPreviewToggle<CR>", "Markdown" },
 		e = { "<CMD>Telescope projects<CR>", "Projects" },
+		m = { "<cmd>MarkdownPreviewToggle<CR>", "Markdown" },
+		o = { "<CMD>SymbolsOutline<CR>", "Outline" },
+		s = { "<CMD>SidebarNvimToggle<CR>", "Sidebar" },
+		u = { "<CMD>UndotreeToggle<CR>", "UndoTree" },
 	}
 
 	lvim.builtin.which_key.mappings["t"] = {

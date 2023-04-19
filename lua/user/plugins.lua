@@ -96,10 +96,10 @@ M.config = function()
         -- 文件操作 --
         --------------
         -- {
-        -- 	"Pocco81/auto-save.nvim",
-        -- 	config = function()
-        -- 		require("auto-save").setup()
-        -- 	end,
+        --     "Pocco81/auto-save.nvim",
+        --     config = function()
+        --         require("auto-save").setup()
+        --     end,
         -- },
         --------------
         -- 界面元素 --
@@ -110,13 +110,31 @@ M.config = function()
                 require("scrollbar").setup()
             end,
         },
-        -- {
-        --     "sidebar-nvim/sidebar.nvim",
-        --     cmd = "Sidebar*",
-        --     config = function()
-        --         require("user.config.sidebar").config()
-        --     end,
-        -- },
+        {
+            "sidebar-nvim/sidebar.nvim",
+            config = function()
+                -- local sidebar = require("sidebar-nvim")
+                -- local opts = { open = true }
+                -- sidebar.setup(opts)
+                require("sidebar-nvim").setup({
+                    initial_width = 30,
+                    section_separator = {
+                        "",
+                        "──────────────────────────",
+                        "",
+                    },
+                    sections = { "files", "symbols", "todos" },
+                    files = {
+                        show_hidden = true,
+                    },
+                    todos = {
+                        icon = " ",
+                        ignored_paths = { "~" },  -- ignore certain paths, this will prevent huge folders like $HOME to hog Neovim with TODO searching
+                        initially_closed = false, -- whether the groups should be initially closed on start. You can manually open/close groups later.
+                    },
+                })
+            end,
+        },
         {
             "simrat39/symbols-outline.nvim",
             cmd = "SymbolsOutline*",
@@ -140,11 +158,30 @@ M.config = function()
             cmd = "TroubleToggle",
         },
         -- {
-        -- 	"kevinhwang91/nvim-bqf",
-        -- 	event = { "BufRead", "BufNew" },
-        -- 	config = function()
-        -- 		require("user.config.bqf").config()
-        -- 	end,
+        --     "kevinhwang91/nvim-bqf",
+        --     event = { "BufRead", "BufNew" },
+        --     config = function()
+        --         require("bqf").setup({
+        --             auto_enable = true,
+        --             preview = {
+        --                 win_height = 12,
+        --                 win_vheight = 12,
+        --                 delay_syntax = 80,
+        --                 border_chars = { "┃", "┃", "━", "━", "┏", "┓", "┗", "┛", "█" },
+        --             },
+        --             func_map = {
+        --                 vsplit = "",
+        --                 ptogglemode = "z,",
+        --                 stoggleup = "",
+        --             },
+        --             filter = {
+        --                 fzf = {
+        --                     action_for = { ["ctrl-s"] = "split" },
+        --                     extra_opts = { "--bind", "ctrl-o:toggle-all", "--prompt", "> " },
+        --                 },
+        --             },
+        --         })
+        --     end,
         -- },
         --------------
         -- 界面美化 --

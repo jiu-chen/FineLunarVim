@@ -2,6 +2,7 @@ local M = {}
 
 M.config = function()
     vim.opt.backup = false
+    vim.opt.modifiable = true
     vim.opt.swapfile = true
     vim.opt.updatetime = 250
     vim.opt.wildignorecase = true
