@@ -39,6 +39,7 @@ M.config = function()
 		e = { "<CMD>Telescope projects<CR>", "Projects" },
 		m = { "<cmd>MarkdownPreviewToggle<CR>", "Markdown" },
 		o = { "<CMD>SymbolsOutline<CR>", "Outline" },
+		r = { "<CMD>RnvimrToggle<CR>", "Rnvimr" },
 		s = { "<CMD>SidebarNvimToggle<CR>", "Sidebar" },
 		u = { "<CMD>UndotreeToggle<CR>", "UndoTree" },
 	}
