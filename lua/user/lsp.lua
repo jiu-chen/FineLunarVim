@@ -20,11 +20,10 @@ M.config = function()
         },
     })
 
-    lvim.format_on_save = { pattern = "*", timeout = 2000 }
     require("lvim.lsp.null-ls.formatters").setup({
         { filetypes = { "cmake" }, command = "cmake_format" },
         { filetypes = { "go" },    command = "goimports" },
-        { filetypes = { "go" },    command = "golines" },
+        -- { filetypes = { "go" },    command = "golines" }, // may conflicit and not work
         {
             filetypes = { "python" },
             command = "black",
