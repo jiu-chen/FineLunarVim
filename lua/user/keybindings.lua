@@ -1,58 +1,60 @@
 local M = {}
 
 local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+    local options = { noremap = true }
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 M.config = function()
-	map("n", "W", "5w")
-	map("n", "B", "5b")
-	map("", ";", "<CMD>HopChar2<CR>")
-	map("", ",", "<CMD>HopLineStartMW<CR>")
-	map("n", "L", "<CMD>BufferLineCycleNext<CR>")
-	map("n", "H", "<CMD>BufferLineCyclePrev<CR>")
-
-	map("n", "se", "<cmd>:split<cr>")
-	map("n", "si", "<cmd>:vsplit<cr>")
+    map("n", "W", "5w")
+    map("n", "B", "5b")
+    map("", ";", "<CMD>HopChar2<CR>")
+    map("", ",", "<CMD>HopLineStartMW<CR>")
 
 
-	map('i', 'jk', '<Esc>')
+    map("n", "L", "<CMD>BufferLineCycleNext<CR>")
+    map("n", "H", "<CMD>BufferLineCyclePrev<CR>")
 
-	map("v", "K", ":m '<-2<CR>gv=gv")
-	map("v", "J", ":m '>+1<CR>gv=gv")
+    map("n", "se", "<cmd>:split<cr>")
+    map("n", "si", "<cmd>:vsplit<cr>")
 
 
-	lvim.builtin.which_key.mappings.s = vim.tbl_extend("keep", lvim.builtin.which_key.mappings.s,
-		{
-			s = { "<cmd>lua require('spectre').open()<CR>", "Open Spectre" },
-			m = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
-			n = { "viw<cmd>lua require('spectre').open_file_search()<CR>", "Search on current file" },
-		}
-	)
+    map('i', 'jk', '<Esc>')
 
-	lvim.builtin.which_key.mappings["a"] = {
-		name = "Application",
-		e = { "<CMD>Telescope projects<CR>", "Projects" },
-		m = { "<cmd>MarkdownPreviewToggle<CR>", "Markdown" },
-		o = { "<CMD>SymbolsOutline<CR>", "Outline" },
-		r = { "<CMD>RnvimrToggle<CR>", "Rnvimr" },
-		s = { "<CMD>SidebarNvimToggle<CR>", "Sidebar" },
-		u = { "<CMD>UndotreeToggle<CR>", "UndoTree" },
-	}
+    map("v", "K", ":m '<-2<CR>gv=gv")
+    map("v", "J", ":m '>+1<CR>gv=gv")
 
-	lvim.builtin.which_key.mappings["t"] = {
-		name = "Diagnostics",
-		t = { "<cmd>TroubleToggle<cr>", "trouble" },
-		w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace" },
-		d = { "<cmd>TroubleToggle document_diagnostics<cr>", "document" },
-		q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
-		l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
-		r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
-	}
+
+    lvim.builtin.which_key.mappings.s = vim.tbl_extend("keep", lvim.builtin.which_key.mappings.s,
+        {
+            s = { "<cmd>lua require('spectre').open()<CR>", "Open Spectre" },
+            m = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
+            n = { "viw<cmd>lua require('spectre').open_file_search()<CR>", "Search on current file" },
+        }
+    )
+
+    lvim.builtin.which_key.mappings["a"] = {
+        name = "Application",
+        e = { "<CMD>Telescope projects<CR>", "Projects" },
+        m = { "<cmd>MarkdownPreviewToggle<CR>", "Markdown" },
+        o = { "<CMD>SymbolsOutline<CR>", "Outline" },
+        r = { "<CMD>RnvimrToggle<CR>", "Rnvimr" },
+        s = { "<CMD>SidebarNvimToggle<CR>", "Sidebar" },
+        u = { "<CMD>UndotreeToggle<CR>", "UndoTree" },
+    }
+
+    lvim.builtin.which_key.mappings["t"] = {
+        name = "Diagnostics",
+        t = { "<cmd>TroubleToggle<cr>", "trouble" },
+        w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace" },
+        d = { "<cmd>TroubleToggle document_diagnostics<cr>", "document" },
+        q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+        l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+        r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+    }
 end
 
 return M
