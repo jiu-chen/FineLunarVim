@@ -148,7 +148,7 @@ M.config = function()
                         "──────────────────────────",
                         "",
                     },
-                    sections = { "files", "symbols", "todos" },
+                    sections = { "files", "symbols", "todos", "diagnostics" },
                     files = {
                         show_hidden = true,
                     },

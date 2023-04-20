@@ -15,3 +15,6 @@ lvim.format_on_save.enabled = true
 lvim.builtin.terminal.active = true
 lvim.builtin.terminal.direction = "vertical"
 lvim.builtin.terminal.size = 60
+
+lvim.builtin.alpha.active = true
+lvim.builtin.alpha.mode = "startify"
