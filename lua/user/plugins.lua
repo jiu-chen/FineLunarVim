@@ -63,16 +63,9 @@ M.config = function()
         --------------
         -- 快速编辑 --
         --------------
-        -- {
-        -- 	"mg979/vim-visual-multi",
-        -- 	keys = { "<C-n>", { "v", "<C-n>" }, "<C-S-L>", { "v", "<C-S-L>" }, "ma", { "v", "ma" } },
-        -- 	setup = function()
-        -- 		require("user.setup.visual-multi").setup()
-        -- 	end,
-        -- 	config = function()
-        -- 		require("user.config.visual-multi").config()
-        -- 	end,
-        -- },
+        {
+            "mg979/vim-visual-multi",
+        },
         --------------
         -- 语言服务 --
         --------------
@@ -178,36 +171,10 @@ M.config = function()
             "mbbill/undotree",
             cmd = { "Undotree*" },
         },
-        {
+        --[[ {
             "folke/trouble.nvim",
             cmd = "TroubleToggle",
-        },
-        -- {
-        --     "kevinhwang91/nvim-bqf",
-        --     event = { "BufRead", "BufNew" },
-        --     config = function()
-        --         require("bqf").setup({
-        --             auto_enable = true,
-        --             preview = {
-        --                 win_height = 12,
-        --                 win_vheight = 12,
-        --                 delay_syntax = 80,
-        --                 border_chars = { "┃", "┃", "━", "━", "┏", "┓", "┗", "┛", "█" },
-        --             },
-        --             func_map = {
-        --                 vsplit = "",
-        --                 ptogglemode = "z,",
-        --                 stoggleup = "",
-        --             },
-        --             filter = {
-        --                 fzf = {
-        --                     action_for = { ["ctrl-s"] = "split" },
-        --                     extra_opts = { "--bind", "ctrl-o:toggle-all", "--prompt", "> " },
-        --                 },
-        --             },
-        --         })
-        --     end,
-        -- },
+        }, ]]
         --------------
         -- 界面美化 --
         --------------

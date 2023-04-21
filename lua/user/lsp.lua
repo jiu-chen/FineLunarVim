@@ -8,7 +8,7 @@ M.config = function()
     require("lvim.lsp.null-ls.linters").setup({
         { filetypes = { "sh" },                                                             command = "shellcheck" },
         { filetypes = { "go" },                                                             command = "golangci_lint" },
-        { filetypes = { "python" },                                                         command = "pylint" },
+        -- { filetypes = { "python" },                                                         command = "pylint" }, -- too critical
         { filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" }, command = "eslint" },
         { filetypes = { "html" },                                                           command = "tidy" },
         { filetypes = { "css" },                                                            command = "stylelint" },
@@ -23,7 +23,7 @@ M.config = function()
     require("lvim.lsp.null-ls.formatters").setup({
         { filetypes = { "cmake" }, command = "cmake_format" },
         { filetypes = { "go" },    command = "goimports" },
-        -- { filetypes = { "go" },    command = "golines" }, // may conflicit and not work
+        -- { filetypes = { "go" },    command = "golines" }, -- may conflicit and not work
         {
             filetypes = { "python" },
             command = "black",
