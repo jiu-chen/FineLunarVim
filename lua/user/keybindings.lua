@@ -30,6 +30,7 @@ M.config = function()
 
     lvim.builtin.which_key.mappings.s = vim.tbl_extend("keep", lvim.builtin.which_key.mappings.s,
         {
+            p = { "<CMD>Telescope projects<CR>", "Open Spectre" },
             s = { "<cmd>lua require('spectre').open()<CR>", "Open Spectre" },
             m = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
             n = { "viw<cmd>lua require('spectre').open_file_search()<CR>", "Search on current file" },
@@ -38,7 +39,6 @@ M.config = function()
 
     lvim.builtin.which_key.mappings["a"] = {
         name = "Application",
-        e = { "<CMD>Telescope projects<CR>", "Projects" },
         m = { "<cmd>MarkdownPreviewToggle<CR>", "Markdown" },
         o = { "<CMD>SymbolsOutline<CR>", "Outline" },
         r = { "<CMD>RnvimrToggle<CR>", "Rnvimr" },
