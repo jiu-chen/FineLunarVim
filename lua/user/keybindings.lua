@@ -22,7 +22,7 @@ M.config = function()
     map("n", "si", "<cmd>:vsplit<cr>")
 
 
-    map('i', 'jk', '<Esc>')
+    map("n", "jk", "<Esc>")
 
     map("v", "K", ":m '<-2<CR>gv=gv")
     map("v", "J", ":m '>+1<CR>gv=gv")
