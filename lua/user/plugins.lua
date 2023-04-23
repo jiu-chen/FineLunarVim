@@ -228,12 +228,12 @@ M.config = function()
                 require("everforest").setup()
             end,
         },
-        --------------
-        -- 其他功能 --
-        --------------
+        ---------
+        -- Git --
+        ---------
         {
-            "sindrets/diffview.nvim",
-            event = "BufRead",
+            'sindrets/diffview.nvim',
+            requires = 'nvim-lua/plenary.nvim',
         },
         {
             "f-person/git-blame.nvim",
@@ -244,13 +244,9 @@ M.config = function()
                 vim.g.gitblame_message_template = '<author> • <date>'
             end,
         },
-        {
-            "voldikss/vim-translator",
-            cmd = { "Translate*" },
-            setup = function()
-                vim.g.translator_default_engines = { "bing", "youdao" }
-            end,
-        },
+        --------------
+        -- MarkDown --
+        --------------
         {
             "iamcco/markdown-preview.nvim",
             run = "cd app && npm install",
@@ -259,6 +255,13 @@ M.config = function()
                 vim.g.mkdp_auto_start = 1
             end,
         },
+        --------------
+        -- 其他功能 --
+        --------------
+        {
+            "hudclark/grpc-nvim",
+            requires = { "nvim-lua/plenary.nvim" }
+        }
     }
 end
 

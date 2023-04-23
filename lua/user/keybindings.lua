@@ -18,6 +18,7 @@ M.config = function()
 
     map("n", "se", "<CMD>split<CR>")
     map("n", "si", "<CMD>vsplit<CR>")
+    map("n", "ye", "<CMD>%y+<CR>")
 
 
     map("i", "jk", "<Esc>")
@@ -28,16 +29,16 @@ M.config = function()
 
     lvim.builtin.which_key.mappings.s = vim.tbl_extend("keep", lvim.builtin.which_key.mappings.s,
         {
-            p = { "<CMD>Telescope projects<CR>", "Open Spectre" },
-            s = { "<cmd>lua require('spectre').open()<CR>", "Open Spectre" },
-            m = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
-            n = { "viw<cmd>lua require('spectre').open_file_search()<CR>", "Search on current file" },
+            e = { "<CMD>Telescope projects<CR>", "Projects" },
+            s = { "<CMD>lua require('spectre').open()<CR>", "Open Spectre" },
+            m = { "<CMD>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
+            n = { "viw<CMD>lua require('spectre').open_file_search()<CR>", "Search on current file" },
         }
     )
 
     lvim.builtin.which_key.mappings["a"] = {
         name = "Application",
-        m = { "<cmd>MarkdownPreviewToggle<CR>", "Markdown" },
+        m = { "<CMD>MarkdownPreviewToggle<CR>", "Markdown" },
         o = { "<CMD>SymbolsOutline<CR>", "Outline" },
         r = { "<CMD>RnvimrToggle<CR>", "Rnvimr" },
         s = { "<CMD>SidebarNvimToggle<CR>", "Sidebar" },
