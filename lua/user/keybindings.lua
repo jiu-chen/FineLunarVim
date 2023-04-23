@@ -11,15 +11,13 @@ end
 M.config = function()
     map("n", "W", "5w")
     map("n", "B", "5b")
-    map("", ";", "<CMD>HopChar2<CR>")
-    map("", ",", "<CMD>HopLineStartMW<CR>")
 
-
+    map("n", ";", "<CMD>HopChar2<CR>")
     map("n", "L", "<CMD>BufferLineCycleNext<CR>")
     map("n", "H", "<CMD>BufferLineCyclePrev<CR>")
 
-    map("n", "se", "<cmd>:split<cr>")
-    map("n", "si", "<cmd>:vsplit<cr>")
+    map("n", "se", "<CMD>split<CR>")
+    map("n", "si", "<CMD>vsplit<CR>")
 
 
     map("i", "jk", "<Esc>")
