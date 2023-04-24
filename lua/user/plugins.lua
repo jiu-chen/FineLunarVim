@@ -258,10 +258,6 @@ M.config = function()
         --------------
         -- 其他功能 --
         --------------
-        {
-            "hudclark/grpc-nvim",
-            requires = { "nvim-lua/plenary.nvim" }
-        }
     }
 end
 
