@@ -9,7 +9,7 @@ local function map(mode, lhs, rhs, opts)
 end
 
 M.config = function()
-	map("i", "ii", "<Esc>")
+	map("i", "ii", "<Esc>") -- use ii to replace Esc key
 
 	map("n", "W", "5w")
 	map("n", "B", "5b")
