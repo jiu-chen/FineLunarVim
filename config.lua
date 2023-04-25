@@ -1,13 +1,10 @@
 require("user.neovim").config()
 
-
 require("user.treesitter").config()
 require("user.lsp").config()
 
-
 require("user.plugins").config()
 require("user.keybindings").config()
-
 
 lvim.colorscheme = "everforest"
 lvim.format_on_save.enabled = true
