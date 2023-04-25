@@ -21,6 +21,7 @@ M.config = function()
 			command = "markdownlint",
 			args = { "--disable", "MD013" },
 		},
+		-- { filetypes = { "proto" }, command = "protolint" },
 	})
 
 	require("lvim.lsp.null-ls.formatters").setup({
