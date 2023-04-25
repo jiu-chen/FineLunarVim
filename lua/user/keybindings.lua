@@ -20,6 +20,7 @@ M.config = function()
 	map("n", "ye", "<CMD>%y+<CR>")
 
 	map("i", "jk", "<Esc>")
+	map("n", "ii", "<Esc>")
 
 	map("v", "K", ":m '<-2<CR>gv=gv")
 	map("v", "J", ":m '>+1<CR>gv=gv")
