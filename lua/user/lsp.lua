@@ -23,7 +23,6 @@ M.config = function()
     require("lvim.lsp.null-ls.formatters").setup({
         { filetypes = { "cmake" }, command = "cmake_format" },
         { filetypes = { "go" },    command = "goimports" },
-        -- { filetypes = { "go" },    command = "golines" }, -- may conflicit and not work
         {
             filetypes = { "python" },
             command = "black",

@@ -80,7 +80,7 @@ M.config = function()
             "j-hui/fidget.nvim",
             event = "BufRead",
             config = function()
-                require("user.config.fidget").config()
+                require "fidget".setup {}
             end,
         },
         {
