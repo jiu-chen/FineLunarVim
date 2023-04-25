@@ -1,10 +1,6 @@
 local M = {}
 
 M.config = function()
-    -- ---WARN: configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
-    -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
-    -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
-
     require("lvim.lsp.null-ls.linters").setup({
         { filetypes = { "sh" },                                                             command = "shellcheck" },
         { filetypes = { "go" },                                                             command = "golangci_lint" },
