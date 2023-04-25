@@ -9,6 +9,8 @@ local function map(mode, lhs, rhs, opts)
 end
 
 M.config = function()
+	map("i", "ii", "<Esc>")
+
 	map("n", "W", "5w")
 	map("n", "B", "5b")
 
@@ -18,9 +20,6 @@ M.config = function()
 	map("n", "se", "<CMD>split<CR>")
 	map("n", "si", "<CMD>vsplit<CR>")
 	map("n", "ye", "<CMD>%y+<CR>")
-
-	map("i", "jk", "<Esc>")
-	map("n", "ii", "<Esc>")
 
 	map("v", "K", ":m '<-2<CR>gv=gv")
 	map("v", "J", ":m '>+1<CR>gv=gv")
