@@ -37,7 +37,14 @@ M.config = function()
 		o = { "<CMD>SymbolsOutline<CR>", "Outline" },
 		r = { "<CMD>RnvimrToggle<CR>", "Rnvimr" },
 		s = { "<CMD>SidebarNvimToggle<CR>", "Sidebar" },
-		u = { "<CMD>UndotreeToggle<CR>", "UndoTree" },
+		c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
+	}
+
+	lvim.builtin.which_key.mappings["m"] = {
+		name = "Marks",
+		a = { "<cmd>MarksListAll<CR>", "Show All Marks" },
+		b = { "<cmd>MarksListBuf<CR>", "Show Marks in Buffer" },
+		g = { "<cmd>MarksListGlobal<CR>", "Show Marks Global" },
 	}
 end
 

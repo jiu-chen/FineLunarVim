@@ -195,6 +195,25 @@ M.config = function()
 				require("todo-comments").setup()
 			end,
 		},
+		{
+			"zbirenbaum/neodim",
+			event = "LspAttach",
+			config = function()
+				require("neodim").setup({
+					alpha = 0.75,
+					blend_color = "#000000",
+					update_in_insert = {
+						enable = true,
+						delay = 100,
+					},
+					hide = {
+						virtual_text = true,
+						signs = true,
+						underline = true,
+					},
+				})
+			end,
+		},
 		--------------
 		-- 界面美化 --
 		--------------
@@ -210,10 +229,6 @@ M.config = function()
 		---------
 		-- Git --
 		---------
-		{
-			"sindrets/diffview.nvim",
-			event = "BufRead",
-		},
 		{
 			"f-person/git-blame.nvim",
 			event = "BufRead",
@@ -232,6 +247,48 @@ M.config = function()
 			ft = "markdown",
 			config = function()
 				vim.g.mkdp_auto_start = 1
+			end,
+		},
+		---------
+		-- 其他 --
+		---------
+		{
+			"folke/persistence.nvim",
+			event = "BufReadPre", -- this will only start session saving when an actual file was opened
+			config = function()
+				require("persistence").setup({
+					dir = vim.fn.expand(vim.fn.stdpath("config") .. "/session/"),
+					options = { "buffers", "curdir", "tabpages", "winsize" },
+				})
+			end,
+		},
+		{
+			"chentoast/marks.nvim",
+			lazy = true,
+			event = { "User FileOpened" },
+			config = function()
+				require("marks").setup({
+					default_mappings = true,
+					-- builtin_marks = { ".", "<", ">", "^" },
+					cyclic = true,
+					force_write_shada = false,
+					refresh_interval = 250,
+					sign_priority = { lower = 10, upper = 15, builtin = 8, bookmark = 20 },
+					excluded_filetypes = {
+						"qf",
+						"NvimTree",
+						"toggleterm",
+						"TelescopePrompt",
+						"alpha",
+						"netrw",
+					},
+					bookmark_0 = {
+						sign = "",
+						virt_text = "hello world",
+						annotate = false,
+					},
+					mappings = {},
+				})
 			end,
 		},
 	}
