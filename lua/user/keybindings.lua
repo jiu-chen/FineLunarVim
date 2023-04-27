@@ -9,7 +9,7 @@ local function map(mode, lhs, rhs, opts)
 end
 
 M.config = function()
-	map("i", "ii", "<Esc>") -- use ii to replace Esc key
+	map("i", "jk", "<Esc>")
 
 	map("n", "W", "5w")
 	map("n", "B", "5b")
@@ -36,7 +36,7 @@ M.config = function()
 		m = { "<CMD>MarkdownPreviewToggle<CR>", "Markdown" },
 		o = { "<CMD>SymbolsOutline<CR>", "Outline" },
 		r = { "<CMD>RnvimrToggle<CR>", "Rnvimr" },
-		s = { "<CMD>SidebarNvimToggle<CR>", "Sidebar" },
+		-- s = { "<CMD>SidebarNvimToggle<CR>", "Sidebar" },
 		c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
 	}
 

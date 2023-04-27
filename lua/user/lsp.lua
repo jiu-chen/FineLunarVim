@@ -25,6 +25,7 @@ M.config = function()
 	})
 
 	require("lvim.lsp.null-ls.formatters").setup({
+		{ filetypes = { "sql" }, command = "sql-formatter" },
 		{ filetypes = { "cmake" }, command = "cmake_format" },
 		{ filetypes = { "go" }, command = "goimports" },
 		{ filetypes = { "python" }, command = "black" },
