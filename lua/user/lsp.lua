@@ -1,7 +1,8 @@
 local M = {}
 
 M.config = function()
-	--[[ require("lvim.lsp.null-ls.linters").setup({
+    -- not necessary?
+    --[[ require("lvim.lsp.null-ls.linters").setup({
 		{
 			filetypes = { "sh" },
 			command = "shellcheck",
@@ -24,15 +25,14 @@ M.config = function()
 		-- { filetypes = { "proto" }, command = "protolint" },
 	})
 ]]
-	require("lvim.lsp.null-ls.formatters").setup({
-		{ filetypes = { "sql" }, command = "sql-formatter" },
-		{ filetypes = { "cmake" }, command = "cmake_format" },
-		{ filetypes = { "go" }, command = "goimports" },
-		{ filetypes = { "python" }, command = "black" },
-		{ filetypes = { "lua" }, command = "stylua" },
-		{ filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" }, command = "prettier" },
-		{ filetypes = { "html", "css", "markdown" }, command = "prettier" },
-	})
+    require("lvim.lsp.null-ls.formatters").setup({
+        { filetypes = { "sql" },                                                            command = "sql-formatter" },
+        { filetypes = { "cmake" },                                                          command = "cmake_format" },
+        { filetypes = { "go" },                                                             command = "goimports" },
+        { filetypes = { "python" },                                                         command = "black" },
+        { filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" }, command = "prettier" },
+        { filetypes = { "html", "css", "markdown" },                                        command = "prettier" },
+    })
 end
 
 return M
