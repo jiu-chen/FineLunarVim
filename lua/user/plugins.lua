@@ -294,7 +294,6 @@ M.config = function()
 		{
 			"lyokha/vim-xkbswitch",
 		},
-		p,
 	}
 end
 

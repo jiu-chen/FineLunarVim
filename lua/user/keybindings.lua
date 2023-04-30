@@ -33,10 +33,10 @@ M.config = function()
 
 	lvim.builtin.which_key.mappings["a"] = {
 		name = "Application",
+		f = { "<CMD>NvimTreeFocus<CR>", "NvimTreeFocus" },
 		m = { "<CMD>MarkdownPreviewToggle<CR>", "Markdown" },
 		o = { "<CMD>SymbolsOutline<CR>", "Outline" },
 		r = { "<CMD>RnvimrToggle<CR>", "Rnvimr" },
-		-- s = { "<CMD>SidebarNvimToggle<CR>", "Sidebar" },
 		c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
 	}
 
