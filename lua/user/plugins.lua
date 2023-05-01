@@ -318,12 +318,6 @@ M.config = function()
         {
             "leoluz/nvim-dap-go",
         },
-        ------
-        --env-
-        ------
-        {
-            'AckslD/swenv.nvim',
-        },
     }
 end
 

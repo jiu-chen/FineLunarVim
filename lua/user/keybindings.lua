@@ -46,23 +46,6 @@ M.config = function()
         b = { "<cmd>MarksListBuf<CR>", "Show Marks in Buffer" },
         g = { "<cmd>MarksListGlobal<CR>", "Show Marks Global" },
     }
-
-    lvim.builtin.which_key.mappings["C"] = {
-        name = "Python",
-        c = { "<cmd>lua require('swenv.api').pick_venv()<cr>", "Choose Env" },
-    }
-
-    lvim.builtin.which_key.mappings["G"] = {
-        name = "Go",
-        t = { "<cmd>GoMod tidy<cr>", "Tidy" },
-        a = { "<cmd>GoTestAdd<Cr>", "Add Test" },
-        A = { "<cmd>GoTestsAll<Cr>", "Add All Tests" },
-        e = { "<cmd>GoTestsExp<Cr>", "Add Exported Tests" },
-        g = { "<cmd>GoGenerate<Cr>", "Go Generate" },
-        f = { "<cmd>gogenerate %<cr>", "go generate file" },
-        c = { "<cmd>gocmt<cr>", "generate comment" },
-        T = { "<cmd>lua require('dap-go').debug_test()<cr>", "Debug Test" },
-    }
 end
 
 return M
