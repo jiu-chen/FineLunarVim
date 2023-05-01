@@ -2,6 +2,7 @@ require("user.neovim").config()
 
 require("user.treesitter").config()
 require("user.lsp").config()
+require("user.dap").config()
 
 require("user.plugins").config()
 require("user.keybindings").config()
