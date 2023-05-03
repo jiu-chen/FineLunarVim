@@ -158,31 +158,6 @@ M.config = function()
             end,
         },
         {
-            "sidebar-nvim/sidebar.nvim",
-            config = function()
-                -- local sidebar = require("sidebar-nvim")
-                -- local opts = { open = true }
-                -- sidebar.setup(opts)
-                require("sidebar-nvim").setup({
-                    initial_width = 30,
-                    section_separator = {
-                        "",
-                        "──────────────────────────",
-                        "",
-                    },
-                    sections = { "files", "symbols", "todos", "diagnostics" },
-                    files = {
-                        show_hidden = true,
-                    },
-                    todos = {
-                        icon = " ",
-                        ignored_paths = { "~" },  -- ignore certain paths, this will prevent huge folders like $HOME to hog Neovim with TODO searching
-                        initially_closed = false, -- whether the groups should be initially closed on start. You can manually open/close groups later.
-                    },
-                })
-            end,
-        },
-        {
             "simrat39/symbols-outline.nvim",
             config = function()
                 require("symbols-outline").setup()
@@ -298,22 +273,18 @@ M.config = function()
         -- Go ----
         -- -------
         {
-            "olexsmir/gopher.nvim",
-            dependencies = { -- dependencies
-                "nvim-lua/plenary.nvim",
+            "ray-x/go.nvim",
+            dependencies = { -- optional packages
+                "ray-x/guihua.lua",
+                "neovim/nvim-lspconfig",
                 "nvim-treesitter/nvim-treesitter",
             },
             config = function()
-                require("gopher").setup {
-                    commands = {
-                        go = "go",
-                        gomodifytags = "gomodifytags",
-                        gotests = "~/go/bin/gotests", -- also you can set custom command path
-                        impl = "impl",
-                        iferr = "iferr",
-                    },
-                }
-            end
+                require("go").setup()
+            end,
+            event = { "CmdlineEnter" },
+            ft = { "go", 'gomod' },
+            build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
         },
         {
             "leoluz/nvim-dap-go",
