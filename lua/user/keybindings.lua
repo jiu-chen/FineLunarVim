@@ -24,6 +24,10 @@ M.config = function()
     map("v", "K", ":m '<-2<CR>gv=gv")
     map("v", "J", ":m '>+1<CR>gv=gv")
 
+    lvim.builtin.which_key.mappings['h'] = {
+        "<CMD>NvimTreeFindFile<CR>", "Locate File"
+    }
+
     lvim.builtin.which_key.mappings.s = vim.tbl_extend("keep", lvim.builtin.which_key.mappings.s, {
         e = { "<CMD>Telescope projects<CR>", "Projects" },
         s = { "<CMD>lua require('spectre').open()<CR>", "Open Spectre" },
@@ -33,7 +37,6 @@ M.config = function()
 
     lvim.builtin.which_key.mappings["a"] = {
         name = "Application",
-        f = { "<CMD>NvimTreeFocus<CR>", "NvimTreeFocus" },
         m = { "<CMD>MarkdownPreviewToggle<CR>", "Markdown" },
         o = { "<CMD>SymbolsOutline<CR>", "Outline" },
         r = { "<CMD>RnvimrToggle<CR>", "Rnvimr" },

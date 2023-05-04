@@ -13,6 +13,7 @@ M.config = function()
     ----------
     require("lvim.lsp.null-ls.formatters").setup({
         { filetypes = { "sql" },                                                            command = "sql-formatter" },
+        { filetypes = { "sh" },                                                             command = "shfmt" },
         { filetypes = { "python" },                                                         command = "black" },
         { filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" }, command = "prettier" },
         { filetypes = { "html", "css", "markdown" },                                        command = "prettier" },

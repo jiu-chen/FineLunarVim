@@ -266,6 +266,7 @@ M.config = function()
                 })
             end,
         },
+        -- 中英文切换 --
         {
             "lyokha/vim-xkbswitch",
         },
@@ -288,6 +289,24 @@ M.config = function()
         },
         {
             "leoluz/nvim-dap-go",
+        },
+        ----------------
+        {
+            "LintaoAmons/scratch.nvim",
+            -- tag = "v0.7.0" -- use tag for stability, or without this to have latest fixed and functions
+        },
+        {
+            "metakirby5/codi.vim",
+            cmd = "Codi",
+        },
+        {
+            "Pocco81/auto-save.nvim",
+            config = function()
+                require("auto-save").setup {
+                    -- your config goes here
+                    -- or just leave it empty :)
+                }
+            end,
         },
     }
 end
