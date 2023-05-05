@@ -31,6 +31,13 @@ M.config = function()
         "dockerfile",
         "proto",
     }
+
+    -- Automatically open file upon creation
+    -- https://github.com/nvim-tree/nvim-tree.lua/issues/1120
+    local api = require("nvim-tree.api")
+    api.events.subscribe(api.events.Event.FileCreated, function(file)
+        vim.cmd("edit " .. file.fname)
+    end)
 end
 
 return M
