@@ -1,7 +1,6 @@
 local M = {}
 
 M.config = function()
-    vim.opt.autoread = true
     vim.opt.backup = false
     vim.opt.modifiable = true
     vim.opt.swapfile = true
@@ -28,6 +27,14 @@ M.config = function()
 
     vim.opt.autoindent = true
     vim.opt.smartindent = true
+
+    -- auto command
+    -- auto read
+    vim.opt.autoread = true
+    vim.api.nvim_create_autocmd({ "bufenter", "cursorhold", "cursorholdi", "focusgained" }, {
+        command = "if mode() != 'c' | checktime | endif",
+        pattern = { "*" },
+    })
 end
 
 return M

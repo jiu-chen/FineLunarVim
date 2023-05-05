@@ -18,3 +18,4 @@ lvim.builtin.terminal.size = 15
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "startify"
+
