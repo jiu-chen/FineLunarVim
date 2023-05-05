@@ -2,7 +2,6 @@ require("user.neovim").config()
 
 require("user.treesitter").config()
 require("user.lsp").config()
-require("user.dap").config()
 
 require("user.plugins").config()
 require("user.keybindings").config()
@@ -18,4 +17,3 @@ lvim.builtin.terminal.size = 15
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "startify"
-

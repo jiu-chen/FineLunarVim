@@ -287,8 +287,18 @@ M.config = function()
             ft = { "go", 'gomod' },
             build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
         },
+        -- dap --
         {
             "leoluz/nvim-dap-go",
+            config = function()
+                require('dap-go').setup()
+            end
+        },
+        {
+            'theHamsta/nvim-dap-virtual-text',
+            config = function()
+                require("nvim-dap-virtual-text").setup()
+            end
         },
         ----------------
         {
