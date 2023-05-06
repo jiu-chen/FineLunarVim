@@ -1,7 +1,7 @@
 local M = {}
 
 local function map(mode, lhs, rhs, opts)
-    local options = { noremap = true }
+    local options = { noremap = true, silent = true }
     if opts then
         options = vim.tbl_extend("force", options, opts)
     end
@@ -24,6 +24,14 @@ M.config = function()
     map("v", "K", ":m '<-2<CR>gv=gv")
     map("v", "J", ":m '>+1<CR>gv=gv")
 
+
+    -- debug
+    map("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>")
+    map("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>")
+    map("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>")
+    map("n", "<F11>", "<cmd>lua require'dap'.step_into()<cr>")
+    map("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>")
+
     lvim.builtin.which_key.mappings['h'] = {
         "<CMD>NvimTreeFindFile<CR>", "Locate File"
     }
@@ -33,12 +41,11 @@ M.config = function()
         s = { "<CMD>lua require('spectre').open()<CR>", "Open Spectre" },
         m = { "<CMD>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
         n = { "viw<CMD>lua require('spectre').open_file_search()<CR>", "Search on current file" },
+        o = { "<CMD>SymbolsOutline<CR>", "Outline" },
     })
 
     lvim.builtin.which_key.mappings["a"] = {
         name = "Application",
-        m = { "<CMD>MarkdownPreviewToggle<CR>", "Markdown" },
-        o = { "<CMD>SymbolsOutline<CR>", "Outline" },
         r = { "<CMD>RnvimrToggle<CR>", "Rnvimr" },
         c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
     }
@@ -48,6 +55,7 @@ M.config = function()
         a = { "<cmd>MarksListAll<CR>", "Show All Marks" },
         b = { "<cmd>MarksListBuf<CR>", "Show Marks in Buffer" },
         g = { "<cmd>MarksListGlobal<CR>", "Show Marks Global" },
+        d = { "<CMD>MarkdownPreviewToggle<CR>", "Markdown" },
     }
 end
 
