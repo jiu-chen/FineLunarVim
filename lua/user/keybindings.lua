@@ -32,9 +32,6 @@ M.config = function()
     map("n", "<F11>", "<cmd>lua require'dap'.step_into()<cr>")
     map("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>")
 
-    lvim.builtin.which_key.mappings['h'] = {
-        "<CMD>NvimTreeFindFile<CR>", "Locate File"
-    }
 
     lvim.builtin.which_key.mappings.s = vim.tbl_extend("keep", lvim.builtin.which_key.mappings.s, {
         e = { "<CMD>Telescope projects<CR>", "Projects" },
@@ -46,8 +43,8 @@ M.config = function()
 
     lvim.builtin.which_key.mappings["a"] = {
         name = "Application",
-        r = { "<CMD>RnvimrToggle<CR>", "Rnvimr" },
         c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
+        l = { "<CMD>Lf<CR>", "Rnvimr" },
     }
 
     lvim.builtin.which_key.mappings["m"] = {
