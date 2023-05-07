@@ -32,6 +32,12 @@ M.config = function()
     map("n", "<F11>", "<cmd>lua require'dap'.step_into()<cr>")
     map("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>")
 
+    -- customize keymap
+    lvim.builtin.which_key.mappings["a"] = {
+        name = "Application",
+        c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
+        l = { "<CMD>Lf<CR>", "Lf" },
+    }
 
     lvim.builtin.which_key.mappings.s = vim.tbl_extend("keep", lvim.builtin.which_key.mappings.s, {
         e = { "<CMD>Telescope projects<CR>", "Projects" },
@@ -41,11 +47,6 @@ M.config = function()
         o = { "<CMD>SymbolsOutline<CR>", "Outline" },
     })
 
-    lvim.builtin.which_key.mappings["a"] = {
-        name = "Application",
-        c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
-        l = { "<CMD>Lf<CR>", "Rnvimr" },
-    }
 
     lvim.builtin.which_key.mappings["m"] = {
         name = "Marks",
@@ -54,6 +55,10 @@ M.config = function()
         g = { "<cmd>MarksListGlobal<CR>", "Show Marks Global" },
         d = { "<CMD>MarkdownPreviewToggle<CR>", "Markdown" },
     }
+
+    lvim.builtin.which_key.mappings['h'] = {}
+    -- terminal
+    lvim.builtin.which_key.mappings["t"] = { "<cmd>ToggleTerm<CR>", "Terminal" }
 end
 
 return M
