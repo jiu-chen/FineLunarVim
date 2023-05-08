@@ -15,6 +15,7 @@ M.config = function()
     --format--
     ----------
     require("lvim.lsp.null-ls.formatters").setup({
+        { filetypes = { "yaml", "yml" },                                                    command = "yamlfmt" },
         { filetypes = { "sql" },                                                            command = "sql-formatter" },
         { filetypes = { "sh" },                                                             command = "shfmt" },
         { filetypes = { "python" },                                                         command = "black" },
