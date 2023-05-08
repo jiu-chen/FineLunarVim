@@ -56,9 +56,10 @@ M.config = function()
         d = { "<CMD>MarkdownPreviewToggle<CR>", "Markdown" },
     }
 
+    -- disable keymap
     lvim.builtin.which_key.mappings['h'] = {}
     -- terminal
-    lvim.builtin.which_key.mappings["t"] = { "<cmd>ToggleTerm<CR>", "Terminal" }
+    lvim.builtin.terminal.open_mapping = "<c-t>"
 end
 
 return M
