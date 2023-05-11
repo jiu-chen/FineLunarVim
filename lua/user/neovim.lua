@@ -35,6 +35,13 @@ M.config = function()
         command = "if mode() != 'c' | checktime | endif",
         pattern = { "*" },
     })
+
+    -- add `pylyzer` to `skipped_servers` list
+    vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pylyzer" })
+    -- remove `pyright` from `skipped_servers` list
+    lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+        return server ~= "pyright"
+    end, lvim.lsp.automatic_configuration.skipped_servers)
 end
 
 return M

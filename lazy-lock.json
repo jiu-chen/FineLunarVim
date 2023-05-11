@@ -68,6 +68,7 @@
   "vim-floaterm": { "branch": "master", "commit": "ff6a8719baf17ab79df730b7ee9227444ee6a088" },
   "vim-illuminate": { "branch": "master", "commit": "a2907275a6899c570d16e95b9db5fd921c167502" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "cdd66d6a37d991bba7997d593586fc51a5b37aa8" },
   "vim-visual-multi": { "branch": "master", "commit": "724bd53adfbaf32e129b001658b45d4c5c29ca1a" },
   "vim-xkbswitch": { "branch": "master", "commit": "4aa9050c58b0b96a7bd28accd15d93fc410af725" },
   "which-key.nvim": { "branch": "main", "commit": "20fcd7b602a2c58d634eaa1f1d28b16a6acbfad3" }

@@ -58,8 +58,12 @@ M.config = function()
 
     -- disable keymap
     lvim.builtin.which_key.mappings['h'] = {}
+    --
+    -- lvim.keys.normal_mode["<leader>h"]   = ":NvimTreeFindFile<cr>"
+    lvim.builtin.which_key.mappings["h"] = { "<cmd>NvimTreeFindFile<CR>", "Nvim Find File" }
+
     -- terminal
-    lvim.builtin.terminal.open_mapping = "<c-t>"
+    lvim.builtin.terminal.open_mapping   = "<c-t>"
 end
 
 return M
