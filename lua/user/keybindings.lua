@@ -56,6 +56,16 @@ M.config = function()
         d = { "<CMD>MarkdownPreviewToggle<CR>", "Markdown" },
     }
 
+    lvim.builtin.which_key.mappings["t"] = {
+        name = "Trouble",
+        t = { "<cmd>TroubleToggle<cr>", "Toggle" },
+        w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace_diagnostics" },
+        d = { "<cmd>TroubleToggle document_diagnostics<cr>", "document_diagnostics" },
+        l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+        q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+        s = { "<cmd>TroubleToggle lsp_references<cr>", "lsp_references" },
+    }
+
     -- disable keymap
     lvim.builtin.which_key.mappings['h'] = {}
     --
