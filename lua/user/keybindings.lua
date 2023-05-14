@@ -35,15 +35,15 @@ M.config = function()
     -- customize keymap
     lvim.builtin.which_key.mappings["a"] = {
         name = "Application",
-        c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
+        c = { "<cmd>lua require('persistence').load()<cr>", "Restore Session" },
         l = { "<CMD>Lf<CR>", "Lf" },
     }
 
     lvim.builtin.which_key.mappings.s = vim.tbl_extend("keep", lvim.builtin.which_key.mappings.s, {
         e = { "<CMD>Telescope projects<CR>", "Projects" },
         s = { "<CMD>lua require('spectre').open()<CR>", "Open Spectre" },
-        m = { "<CMD>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
-        n = { "viw<CMD>lua require('spectre').open_file_search()<CR>", "Search on current file" },
+        m = { "<CMD>lua require('spectre').open_visual({select_word=true})<CR>", "Search Current Word" },
+        n = { "viw<CMD>lua require('spectre').open_file_search()<CR>", "Search on Current File" },
         o = { "<CMD>SymbolsOutline<CR>", "Outline" },
     })
 
