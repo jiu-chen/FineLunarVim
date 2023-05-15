@@ -22,8 +22,8 @@ M.config = function()
         { filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" }, command = "prettier" },
         { filetypes = { "html", "css", "markdown" },                                        command = "prettier" },
         -- go --
-        { command = "goimports",                                                            filetypes = { "go" } },
-        { command = "gofumpt",                                                              filetypes = { "go" } },
+        { filetypes = { "go" },                                                             command = "goimports" },
+        { filetypes = { "go" },                                                             command = "gofumpt" },
     })
 end
 

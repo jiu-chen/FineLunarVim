@@ -5,6 +5,8 @@ require("user.lsp").config()
 
 require("user.plugins").config()
 require("user.keybindings").config()
+require("user.copilot")
+
 
 lvim.colorscheme = "everforest"
 lvim.format_on_save.enabled = true

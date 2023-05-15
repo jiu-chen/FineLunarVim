@@ -226,6 +226,10 @@ M.config = function()
                 vim.g.gitblame_message_template = "<author> • <date>"
             end,
         },
+        {
+            'sindrets/diffview.nvim',
+            dependencies = 'nvim-lua/plenary.nvim'
+        },
         --------------
         -- MarkDown --
         --------------
@@ -335,6 +339,29 @@ M.config = function()
                 }
             end
         },
+        ---- 🔥 Copilot
+        {
+            "zbirenbaum/copilot.lua",
+            cmd = "Copilot",
+            event = "InsertEnter",
+        },
+        {
+            "zbirenbaum/copilot-cmp",
+            after = { "copilot.lua" },
+            config = function()
+                require("copilot_cmp").setup()
+            end,
+        },
+        {
+            "ibhagwan/fzf-lua",
+            config = function()
+                require 'fzf-lua'.setup({
+                    commands = {
+                        actions = { ["default"] = require 'fzf-lua'.actions.ex_run_cr },
+                    },
+                })
+            end
+        }
     }
 end
 
