@@ -114,6 +114,10 @@ M.config = function()
         -- 界面元素 --
         --------------
         {
+            'stevearc/dressing.nvim',
+            opts = {},
+        },
+        {
             "folke/noice.nvim",
             config = function()
                 require("noice").setup({
@@ -352,6 +356,7 @@ M.config = function()
                 require("copilot_cmp").setup()
             end,
         },
+        ---- 🔥 fzf
         {
             "ibhagwan/fzf-lua",
             config = function()
@@ -361,7 +366,12 @@ M.config = function()
                     },
                 })
             end
-        }
+        },
+        ---- 🔥 python
+        {
+            'AckslD/swenv.nvim',
+        },
+
     }
 end
 
