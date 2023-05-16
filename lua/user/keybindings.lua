@@ -48,7 +48,7 @@ M.config = function()
     })
 
 
-    lvim.builtin.which_key.mappings["m"] = {
+    lvim.builtin.which_key.mappings["m"]  = {
         name = "Marks",
         a = { "<cmd>MarksListAll<CR>", "Show All Marks" },
         b = { "<cmd>MarksListBuf<CR>", "Show Marks in Buffer" },
@@ -56,7 +56,7 @@ M.config = function()
         d = { "<CMD>MarkdownPreviewToggle<CR>", "Markdown" },
     }
 
-    lvim.builtin.which_key.mappings["t"] = {
+    lvim.builtin.which_key.mappings["t"]  = {
         name = "Trouble",
         t = { "<cmd>TroubleToggle<cr>", "Toggle" },
         w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace_diagnostics" },
@@ -67,18 +67,17 @@ M.config = function()
     }
 
     -- disable keymap
-    lvim.builtin.which_key.mappings['h'] = {}
-    lvim.builtin.which_key.mappings["h"] = { "<cmd>NvimTreeFindFile<CR>", "Nvim Find File" }
+    lvim.builtin.which_key.mappings['h']  = {}
+    lvim.builtin.which_key.mappings["h"]  = { "<cmd>NvimTreeFindFile<CR>", "Nvim Find File" }
+    lvim.builtin.which_key.mappings["f"]  = { "<cmd>FzfLua files<CR>", "Find File" }
+
+    -- Adding a key to an existing menu/submenu.
+    lvim.builtin.which_key.mappings["st"] = { "<cmd>FzfLua grep_project<CR>", "Find Text" }
+    -- diff view
+    lvim.keys.normal_mode["<leader>df"]   = { "<CMD>DiffviewOpen<CR>" }
 
     -- terminal
-    lvim.builtin.terminal.open_mapping   = "<c-t>"
-    -- diff view
-    lvim.keys.normal_mode["<leader>df"]  = { "<CMD>DiffviewOpen<CR>" }
-
-    -- fzf
-    --
-    -- FzfLua grep_project
-    lvim.keys.normal_mode["<C-f>"]       = ":FzfLua grep_project<CR>"
+    lvim.builtin.terminal.open_mapping    = "<c-t>"
 end
 
 return M
