@@ -2,9 +2,19 @@ local M = {}
 
 M.config = function()
     lvim.plugins = {
-        --------------
-        -- 屏幕滚动 --
-        --------------
+        {
+            "folke/trouble.nvim",
+            dependencies = {
+                "nvim-tree/nvim-web-devicons",
+            },
+            config = function()
+                require("trouble").setup {
+                    -- your configuration comes here
+                    -- or leave it empty to use the default settings
+                    -- refer to the configuration section below
+                }
+            end
+        },
         {
             "karb94/neoscroll.nvim",
             event = "WinScrolled",
@@ -16,9 +26,6 @@ M.config = function()
                 })
             end,
         },
-        --------------
-        -- 标签跳转 --
-        --------------
         {
             "ethanholz/nvim-lastplace",
             event = "BufRead",
@@ -35,9 +42,6 @@ M.config = function()
                 })
             end,
         },
-        --------------
-        -- 搜索替换 --
-        --------------
         {
             "windwp/nvim-spectre",
             event = "BufRead",
@@ -45,9 +49,6 @@ M.config = function()
                 require("spectre").setup()
             end,
         },
-        --------------
-        -- 快速编辑 --
-        --------------
         {
             "mg979/vim-visual-multi",
         },
@@ -58,16 +59,6 @@ M.config = function()
             --  vim.o.timeoutlen = 500
             -- end
         },
-        --------------
-        -- 语言服务 --
-        --------------
-        --[[ {
-            "j-hui/fidget.nvim",
-            event = "BufRead",
-            config = function()
-                require "fidget".setup {}
-            end,
-        }, ]]
         {
             "ray-x/lsp_signature.nvim",
             config = function()
@@ -92,27 +83,12 @@ M.config = function()
                 })
             end,
         },
-        --------------
-        -- 文件操作 --
-        --------------
-        -- {
-        --     "kevinhwang91/rnvimr",
-        --     cmd = "RnvimrToggle",
-        --     config = function()
-        --         vim.g.rnvimr_draw_border = 1
-        --         vim.g.rnvimr_pick_enable = 1
-        --         vim.g.rnvimr_bw_enable = 1
-        --     end,
-        -- },
         {
             'ptzz/lf.vim',
             dependencies = {
                 'voldikss/vim-floaterm',
             }
         },
-        --------------
-        -- 界面元素 --
-        --------------
         {
             'stevearc/dressing.nvim',
             opts = {},
@@ -206,9 +182,6 @@ M.config = function()
                 })
             end,
         },
-        --------------
-        -- 界面美化 --
-        --------------
         {
             "mrjones2014/nvim-ts-rainbow",
         },
@@ -245,9 +218,6 @@ M.config = function()
                 vim.g.mkdp_auto_start = 1
             end,
         },
-        ---------
-        -- 其他 --
-        ---------
         {
             "folke/persistence.nvim",
             event = "BufReadPre", -- this will only start session saving when an actual file was opened
@@ -287,10 +257,6 @@ M.config = function()
                 })
             end,
         },
-        -- 中英文切换 --
-        {
-            "lyokha/vim-xkbswitch",
-        },
         ----------
         -- Go ----
         -- -------
@@ -308,7 +274,6 @@ M.config = function()
             ft = { "go", 'gomod' },
             build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
         },
-        -- dap --
         {
             "leoluz/nvim-dap-go",
             config = function()
@@ -319,28 +284,6 @@ M.config = function()
             'theHamsta/nvim-dap-virtual-text',
             config = function()
                 require("nvim-dap-virtual-text").setup()
-            end
-        },
-        ----------------
-        {
-            "LintaoAmons/scratch.nvim",
-            -- tag = "v0.7.0" -- use tag for stability, or without this to have latest fixed and functions
-        },
-        {
-            "metakirby5/codi.vim",
-            cmd = "Codi",
-        },
-        {
-            "folke/trouble.nvim",
-            dependencies = {
-                "nvim-tree/nvim-web-devicons",
-            },
-            config = function()
-                require("trouble").setup {
-                    -- your configuration comes here
-                    -- or leave it empty to use the default settings
-                    -- refer to the configuration section below
-                }
             end
         },
         ---- 🔥 Copilot
@@ -371,6 +314,31 @@ M.config = function()
         {
             'AckslD/swenv.nvim',
         },
+        {
+            "mfussenegger/nvim-dap-python",
+        },
+        {
+            "nvim-neotest/neotest",
+        },
+        {
+            "nvim-neotest/neotest-python",
+            config = function()
+                require("neotest").setup({
+                    adapters = {
+                        require("neotest-python")({
+                            -- Extra arguments for nvim-dap configuration
+                            -- See https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for values
+                            dap = {
+                                justMyCode = false,
+                                console = "integratedTerminal",
+                            },
+                            args = { "--log-level", "DEBUG", "--quiet" },
+                            runner = "pytest",
+                        })
+                    }
+                })
+            end
+        }
 
     }
 end
