@@ -74,7 +74,7 @@ M.config = function()
     -- lvim.keys.normal_mode["<C-f>"] = ":FzfLua grep_project<cr>"
 
     -- Adding a key to an existing menu/submenu.
-    lvim.builtin.which_key.mappings.b.t  = { "<cmd>FzfLua grep_project<cr>", "Find Text in Project" }
+    lvim.builtin.which_key.mappings.s.t  = { "<cmd>FzfLua grep_project<cr>", "Find Text in Project" }
     lvim.builtin.which_key.mappings.b.f  = { "<cmd>FzfLua buffers<cr>", "Find File in Buffer" }
     -- lvim.builtin.which_key.mappings["bb"] = { "<cmd>FzfLua blines<cr>", "Find text in Current File" }
     -- 这样写不能覆盖原有的 <leader>bb, 会造成confusion, 通过导出命令可以看到看到mappings.b.b["1"]和mappings.bb["1"]
