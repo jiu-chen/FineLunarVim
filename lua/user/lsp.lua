@@ -23,7 +23,7 @@ M.config = function()
         { filetypes = { "html", "css", "markdown" },                                        command = "prettier" },
         -- go --
         { filetypes = { "go" },                                                             command = "goimports" },
-        { filetypes = { "go" },                                                             command = "gofumpt" },
+        -- { filetypes = { "go" },                                                             command = "gofumpt" },
     })
 end
 

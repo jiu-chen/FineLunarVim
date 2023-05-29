@@ -83,16 +83,10 @@ M.config = function()
                 })
             end,
         },
-        {
-            'ptzz/lf.vim',
-            dependencies = {
-                'voldikss/vim-floaterm',
-            }
-        },
-        {
-            'stevearc/dressing.nvim',
-            opts = {},
-        },
+        -- {
+        --     'stevearc/dressing.nvim',
+        --     opts = {},
+        -- },
         {
             "folke/noice.nvim",
             config = function()
@@ -228,35 +222,35 @@ M.config = function()
                 })
             end,
         },
-        {
-            "chentoast/marks.nvim",
-            lazy = true,
-            event = { "User FileOpened" },
-            config = function()
-                require("marks").setup({
-                    default_mappings = true,
-                    -- builtin_marks = { ".", "<", ">", "^" },
-                    cyclic = true,
-                    force_write_shada = false,
-                    refresh_interval = 250,
-                    sign_priority = { lower = 10, upper = 15, builtin = 8, bookmark = 20 },
-                    excluded_filetypes = {
-                        "qf",
-                        "NvimTree",
-                        "toggleterm",
-                        "TelescopePrompt",
-                        "alpha",
-                        "netrw",
-                    },
-                    bookmark_0 = {
-                        sign = "",
-                        virt_text = "hello world",
-                        annotate = false,
-                    },
-                    mappings = {},
-                })
-            end,
-        },
+        -- {
+        --     "chentoast/marks.nvim",
+        --     lazy = true,
+        --     event = { "User FileOpened" },
+        --     config = function()
+        --         require("marks").setup({
+        --             default_mappings = true,
+        --             -- builtin_marks = { ".", "<", ">", "^" },
+        --             cyclic = true,
+        --             force_write_shada = false,
+        --             refresh_interval = 250,
+        --             sign_priority = { lower = 10, upper = 15, builtin = 8, bookmark = 20 },
+        --             excluded_filetypes = {
+        --                 "qf",
+        --                 "NvimTree",
+        --                 "toggleterm",
+        --                 "TelescopePrompt",
+        --                 "alpha",
+        --                 "netrw",
+        --             },
+        --             bookmark_0 = {
+        --                 sign = "",
+        --                 virt_text = "hello world",
+        --                 annotate = false,
+        --             },
+        --             mappings = {},
+        --         })
+        --     end,
+        -- },
         ----------
         -- Go ----
         -- -------
@@ -299,6 +293,9 @@ M.config = function()
                 require("copilot_cmp").setup()
             end,
         },
+        -- {
+        --     "github/copilot.vim",
+        -- },
         ---- 🔥 fzf
         {
             "ibhagwan/fzf-lua",
@@ -316,28 +313,8 @@ M.config = function()
         },
         {
             "mfussenegger/nvim-dap-python",
-        },
-        {
             "nvim-neotest/neotest",
-        },
-        {
             "nvim-neotest/neotest-python",
-            config = function()
-                require("neotest").setup({
-                    adapters = {
-                        require("neotest-python")({
-                            -- Extra arguments for nvim-dap configuration
-                            -- See https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for values
-                            dap = {
-                                justMyCode = false,
-                                console = "integratedTerminal",
-                            },
-                            args = { "--log-level", "DEBUG", "--quiet" },
-                            runner = "pytest",
-                        })
-                    }
-                })
-            end
         }
 
     }

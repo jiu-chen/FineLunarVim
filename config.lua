@@ -5,8 +5,8 @@ require("user.lsp").config()
 
 require("user.plugins").config()
 require("user.keybindings").config()
-require("user.copilot")
 require("user.dap")
+require("user.copilot")
 
 
 lvim.colorscheme = "everforest"

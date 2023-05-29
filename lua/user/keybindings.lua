@@ -41,7 +41,7 @@ M.config = function()
     }
 
     lvim.builtin.which_key.mappings.s = vim.tbl_extend("keep", lvim.builtin.which_key.mappings.s, {
-        e = { "<cmd>Telescope projects<cr>", "Projects" },
+        e = { "<cmd>Telescope projects<cr>", "Open Recently Projects" },
         s = { "<cmd>lua require('spectre').open()<cr>", "Open Spectre" },
         m = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search Current Word" },
         n = { "viw<cmd>lua require('spectre').open_file_search()<cr>", "Search on Current File" },
@@ -50,7 +50,7 @@ M.config = function()
 
 
     lvim.builtin.which_key.mappings["m"] = {
-        name = "Marks",
+        name = "M",
         a = { "<cmd>MarksListAll<cr>", "Show All Marks" },
         b = { "<cmd>MarksListBuf<cr>", "Show Marks in Buffer" },
         g = { "<cmd>MarksListGlobal<cr>", "Show Marks Global" },
@@ -69,41 +69,30 @@ M.config = function()
 
     -- disable keymap
     lvim.builtin.which_key.mappings['h'] = {}
-    -- lvim.builtin.which_key.mappings["h"] = { "<cmd>NvimTreeFindFile<cr>", "Nvim Find File" }
-    lvim.builtin.which_key.mappings["f"] = { "<cmd>FzfLua files<cr>", "Find File" }
-    -- lvim.keys.normal_mode["<C-f>"] = ":FzfLua grep_project<cr>"
+    lvim.builtin.which_key.mappings['f'] = {}
+    lvim.builtin.which_key.mappings['T'] = {}
 
     -- Adding a key to an existing menu/submenu.
-    lvim.builtin.which_key.mappings.s.t  = { "<cmd>FzfLua grep_project<cr>", "Find Text in Project" }
-    lvim.builtin.which_key.mappings.b.f  = { "<cmd>FzfLua buffers<cr>", "Find File in Buffer" }
+    -- lvim.builtin.which_key.mappings.s.t  = { "<cmd>FzfLua live_grep<cr>", "FzfLua grep_project" }
+    -- lvim.builtin.which_key.mappings.b.f  = { "<cmd>FzfLua buffers<cr>", "FzfLua buffers" }
     -- lvim.builtin.which_key.mappings["bb"] = { "<cmd>FzfLua blines<cr>", "Find text in Current File" }
     -- 这样写不能覆盖原有的 <leader>bb, 会造成confusion, 通过导出命令可以看到看到mappings.b.b["1"]和mappings.bb["1"]
     -- 通过下面命令去查看插件是如何配置的
     -- lvim --headless +'lua require("lvim.utils").generate_settings()' +qa && sort -o lv-settings.lua{,}
-    lvim.builtin.which_key.mappings.b.b  = { "<cmd>FzfLua blines<cr>", "Find text in Current File" }
+    -- lvim.builtin.which_key.mappings.b.b  = { "<cmd>FzfLua blines<cr>", "FzfLua blines" }
+    -- lvim.builtin.which_key.mappings.s.r  = { "<cmd>FzfLua oldfiles<cr>", "FzfLua oldfiles" }
 
-    -- diff view
-    lvim.keys.normal_mode["<leader>df"]  = { "<cmd>DiffviewOpen<cr>" }
+    lvim.builtin.which_key.mappings["f"] = {
+        name = "FzfLua",
+        f = { "<cmd>FzfLua files<cr>", "files" },
+        t = { "<cmd>FzfLua live_grep<cr>", "live grep current project" },
+        b = { "<cmd>FzfLua buffers<cr>", "open buffers" },
+        l = { "<cmd>FzfLua blines<cr>", "current buffer lines" },
+        o = { "<cmd>FzfLua oldfiles<cr>", "opened files history" },
+    }
 
     -- terminal
     lvim.builtin.terminal.open_mapping   = "<c-t>"
-
-
-    -- Python
-    lvim.builtin.which_key.mappings["dm"] = { "<cmd>lua require('neotest').run.run()<cr>",
-        "Test Method" }
-    lvim.builtin.which_key.mappings["dM"] = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>",
-        "Test Method DAP" }
-    lvim.builtin.which_key.mappings["df"] = {
-        "<cmd>lua require('neotest').run.run({vim.fn.expand('%')})<cr>", "Test Class" }
-    lvim.builtin.which_key.mappings["dF"] = {
-        "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Test Class DAP" }
-    lvim.builtin.which_key.mappings["dS"] = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Test Summary" }
-
-    lvim.builtin.which_key.mappings["C"] = {
-        name = "Python",
-        c = { "<cmd>lua require('swenv.api').pick_venv()<cr>", "Choose Env" },
-    }
 end
 
 return M

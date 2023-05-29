@@ -6,10 +6,10 @@ end
 copilot.setup {
     suggestion = {
         keymap = {
-            accept = "<c-l>",
-            next = "<c-j>",
-            prev = "<c-k>",
-            dismiss = "<c-h>",
+            accept = "<M-l>",
+            next = "<M-j>",
+            prev = "<M-k>",
+            dismiss = "<M-h>",
         },
     },
 }
