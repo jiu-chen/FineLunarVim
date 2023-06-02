@@ -22,6 +22,9 @@ M.config = function()
     map("n", "ye", "<cmd>%y+<cr>")
     map("n", "df", "<cmd>DiffviewOpen<cr>")
 
+    lvim.lsp.buffer_mappings.normal_mode['K'] = nil
+    map("n", "gh", "<cmd>lua vim.lsp.buf.hover()<cr>")
+
     map("v", "K", ":m '<-2<cr>gv=gv")
     map("v", "J", ":m '>+1<cr>gv=gv")
 
